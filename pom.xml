@@ -8,14 +8,19 @@
         <version>2.4.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>no.kristianped</groupId>
     <artifactId>spring-jms</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-jms</name>
     <description>A Spring Boot Application using JMS</description>
+
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>11</java.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -25,7 +30,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
 
         <dependency>
             <groupId>org.apache.activemq</groupId>
@@ -56,6 +60,8 @@
 
     <build>
         <plugins>
+
+            <!-- Spring boot plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -68,6 +74,8 @@
                     </excludes>
                 </configuration>
             </plugin>
+
+            <!-- Failsafe -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
@@ -89,6 +97,8 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- Jacoco -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
